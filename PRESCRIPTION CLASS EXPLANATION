@@ -1,0 +1,19 @@
+- The code defines a new class called Prescription that extends the Medicine class.
+- Prescription class has a private instance variable called doctorSpecialization which is a string.
+- The Prescription class has three constructors: a default constructor and two parameterized constructors.
+- The default constructor of the Prescription class calls the default constructor of the parent class
+"Medicine" using the super() method.
+- The first parameterized constructor of the Prescription class takes four arguments:
+name, composition, dose, and doctorSpecialization.
+This constructor calls the second constructor of the parent class "Medicine" using the super() method
+and sets the doctor specialization.
+- The second parameterized constructor of the Prescription class takes six arguments:
+name, composition, dose, quantity, price, and doctorSpecialization.
+- This constructor calls the third constructor of the parent class "Medicine" using the super()
+method and sets the doctor specialization.
+- The Prescription class has a getter method for the doctorSpecialization instance variable.
+- The Prescription class has a setter method for the doctorSpecialization instance variable.
+The Prescription class overrides the toString() method of the Medicine class.
+The new toString() method returns a string representation of the Prescription,
+including information about the Medicine using the toString in the Parent Class "Medicine"
+and adds the doctor's specialization.

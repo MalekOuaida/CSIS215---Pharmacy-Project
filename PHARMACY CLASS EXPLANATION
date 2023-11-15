@@ -1,0 +1,104 @@
+- A private String data field called "name" which represents the name of the pharmacy.
+- A private array of the object "Medicine" called "medicines" which will store the medicines available in the pharmacy.
+- A private int data field called "overTheCounterQuantity" which represents the quantity of medicines that
+do not require a prescription.
+- A private int data field called "prescriptionQuantity" which represents the quantity of medicines
+that require a prescription.
+- A private int data field called "numberOfMedicines" which represents the total number of medicines
+available in the pharmacy.
+- A static int data field called "MaxNumberOfMedicines" which represents the maximum number of medicines that
+can be stored in the pharmacy.
+- The code also contains a constructor method called "Pharmacy" which takes in a String parameter called "name".
+This constructor sets the name of the pharmacy to the value passed in as the parameter, and initializes the medicines
+array, the over the counter quantity, the prescription quantity, and the number of medicines to their default values.
+- The class has multiple getters and setters for its instance variables, which are (medicines, overthecounterquantity,
+prescriptionquantity, numberofmedicines, name, maxnumberofmedicines)
+- The class has a toString() method that returns a string containing information about the pharmacy,
+including its name, the number of medicines, and the quantities of over-the-counter and prescription medicines.
+
+-- ADD MEDICINE METHOD
+This is a method called addMedicine, which takes a Medicine object as a parameter and adds it to the pharmacy's
+inventory. Here are the steps that the code follows:
+- The method creates a boolean variable called medicineExists and sets it to false.
+- It also creates an integer variable called index and sets it to -1.
+- The code then loops through the array of medicines to see if the medicine
+that is being added already exists in the array.
+- If the medicine is found in the array, the medicineExists variable is set to true,
+and the index variable is set to the index of the medicine in the array.
+- After the loop, the code checks if the medicineExists variable is true.
+If it is, it displays a message saying that the medicine already exists in the pharmacy.
+- If the pharmacy is already full, the code displays a message saying that the medicine can't be added.
+- If the medicine is not found in the array, the code adds the medicine to the array
+and increments the numberOfMedicines variable by 1.
+- If the medicine is of type Prescription, the code increments the prescriptionQuantity variable by
+the quantity of the medicine that was added.
+- If the medicine is not of type Prescription, the code increments the overTheCounterQuantity
+variable by the quantity of the medicine that was added.
+- Overall, this method is responsible for adding medicines to the pharmacy's inventory while keeping track of the
+quantity of medicines that require a prescription and the quantity of medicines that do not require a prescription.
+
+-- RAISEPRICES METHOD
+This is a method called raiseprices that raises the prices of all the medicines
+in the pharmacy by a certain percentage. Here's how it works:
+- The method takes a double value called percentage as a parameter.
+- Inside the method, there's a for loop that runs through all the medicines available in the pharmacy, one by one.
+- For each medicine, the method gets the old price of the medicine using the getPrice() method of the Medicine class,
+and stores it in a double variable called oldPrice.
+- Then, the method calculates the new price of the medicine by multiplying the old price with the percentage increase,
+adding 1 to it and storing it in a double variable called newPrice.
+- Finally, the method sets the new price of the medicine using the setPrice() method of the Medicine class.
+
+-- SEARCHBYNAME METHOD
+- The method is named "searchByName".
+- It takes a string "name" as input, which is the name of the medicine to be searched.
+- It returns an integer array, which stores the indices of the matching medicines.
+- The method initializes an integer array called "indices" with a length equal to the number of
+medicines in the pharmacy.
+- It also initializes a variable called "count" to keep track of the number of matching medicines.
+- The method then iterates over the array of medicines and checks if the name of the medicine at
+index i matches the given name.
+- If there is a match, it adds the index i to the "indices" array and increments the "count" variable.
+- After the loop is complete, the method creates a new integer array called "result"
+with a length equal to the number of matching medicines.
+- It then copies the matching indices from the "indices" array to the "result" array.
+- Finally, it returns the "result" array, which contains the indices of the matching medicines.
+
+-- SEARCHBYNAMEANDDOSE METHOD
+- This method takes two arguments: a name (String) and a dose (double).
+- The method iterates over the medicines array using a for loop and checks
+if the name and dose of each medicine match the given parameters using an if statement.
+- If a medicine is found with the given name and dose, the index of that medicine is returned.
+- If the method completes the for loop without finding a medicine with the given name and dose, -1
+is returned to indicate that the medicine was not found.
+
+-- SEARCHBYCOMPOSITION METHOD
+- The method searchByComposition takes a String parameter 'composition' which represents the composition to search for.
+- The method iterates over the medicines array using a for loop to count the number of medicines
+that have the specified composition.
+- If a medicine is found with the specified composition, it increments the count variable.
+- An integer array 'result' is created to store the indices of the medicines with the specified composition.
+- The method iterates over the medicines array again to fill the result array with
+the indices of the medicines with the specified composition.
+- If a medicine is found with the specified composition, it adds its index to the
+result array and increments the index variable.
+- The method returns the result array containing the indices of the medicines with the specified composition.
+
+-- SELLMEDICINE METHOD
+- This code defines a method named sellMedicine which takes three parameters:
+name (a string), dose (a double), and quantity (an integer).
+- The method first calls the searchByNameAndDose method to get the index of the medicine with the given name and dose.
+- If the index is -1, the method prints "Medicine not found." and exits.
+- Otherwise, the method gets the Medicine object at the index.
+- If the available quantity of the medicine is greater than or equal to the requested quantity,
+the method reduces the quantity of the medicine by the requested quantity and prints "Selling successful."
+- Otherwise, the method prints "Available quantity is not enough."
+
+-- RESTOCK METHOD
+- The method takes three arguments: name (String), dose (double), and quantity (int).
+- It searches for the medicine in the medicines array by calling the searchByNameAndDose method
+and stores the index of the medicine in the index variable.
+- If the medicine is found (index is not -1), the quantity of the medicine is increased
+by the given quantity by calling the setQuantity method on the medicine object at the found index.
+- If the medicine is not found (index is -1), the method returns false to indicate that the restock was unsuccessful.
+- If the medicine is found and restocked successfully, the method returns true to indicate
+that the restock was successful.

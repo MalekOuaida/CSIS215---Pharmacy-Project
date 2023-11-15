@@ -1,0 +1,12 @@
+- The code defines a class named "Medicine" with private instance variables for name,
+composition, dose, price, and quantity.
+- It has three constructors: one with default values for dose, price, and quantity,
+another with specified values for name, composition, and dose, and the third one with specified values for
+name, composition, dose, quantity, and price.
+- It has getter and setter methods for all private instance variables.
+- The toString() method returns a string representation of a Medicine object.
+- The equals() method compares two Medicine objects for equality based on their name and dose.
+- The constructor and setter methods use the toLowerCase() method to ensure that the name and composition
+values are always in lowercase letters.
+- The instance variables dose and quantity are of type int, and the price variable is of type double.
+- The code includes comments that describe each method and instance variable.

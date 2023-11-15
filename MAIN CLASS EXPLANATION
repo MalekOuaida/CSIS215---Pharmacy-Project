@@ -1,0 +1,75 @@
+- This code is an implementation of a pharmacy system in Java.
+It has a class called "Pharmacy" which is used to create objects that represent pharmacies,
+and other classes for different types of medicines, such as prescription and over-the-counter.
+
+- The code starts by importing the Scanner package, which is used for input from the user.
+Then, a new instance of the Pharmacy class is created, with the name "myPharma".
+
+- The main method prints a welcome message and displays a menu with options for the user.
+It uses a do-while loop to keep displaying the menu and accepting input from the user until the user chooses to exit.
+
+- The menu method prints the options for the user to choose from and returns the choice made by the user.
+
+- Each case in the switch statement of the main method corresponds to an option in the menu.
+When the user selects an option, a corresponding method is called, such as addNewMedicine(), searchByName(), etc.
+Each of these methods prompts the user for information and performs the necessary operations,
+such as adding a new medicine, searching for a medicine by name, selling a medicine,
+and displaying pharmacy information.
+
+
+-- ADDNEWMEDICINE METHOD
+The addNewMedicine() method prompts the user for information about a new medicine
+and creates a new object of the OverTheCounter or Prescription class depending on whether
+the medicine is over-the-counter or prescription. The object is then added to the list of medicines in the pharmacy.
+
+-- SEARCHBYNAME METHOD
+The method searches for a medicine by its name using the Scanner class to get user input,
+and it calls a method named searchByName() inside the pharmacy class to find the indices of the medicines
+that match the given name. If no medicine is found, the method prints "Medicine not found." and a separator line.
+If a medicine is found, the method prints "Search results for <name of the medicine>:" and a separator line,
+and then iterates through the indices array to print the details of the matching medicines using the getMedicines()
+method inside the pharmacy class. Finally, the method prints a separator line after each medicine's details.
+
+-- SEARCHBYCOMPOSITION METHOD
+The method takes user input for the composition and calls the searchByComposition method in the pharmacy class
+to get the indices of medicines that match the given composition. If no matching medicine is found, the method
+prints a message saying "Medicine not found." Otherwise, it prints the search results for the composition and displays
+the details of each matching medicine.
+
+-- SELLMEDICINE METHOD
+This method allows the user to sell a certain quantity of a specific medicine, given its name and dose.
+It first prompts the user to enter the name of the medicine, the dose, and the quantity to sell.
+Then it calls the sellMedicine() method of the pharmacy object with these parameters,
+which decreases the stock of the medicine in the pharmacy's inventory by the specified quantity.
+Finally, it prints a separator line.
+
+-- RESTOCKMEDICINE METHOD
+The method starts by creating a new Scanner object to allow the user to input the medicine name, dose,
+and the quantity to be restocked. Once the user inputs the medicine details, the method calls the restock method
+available in the Pharmacy class to restock the medicine. The restock method in the Pharmacy class checks if
+the medicine with the given name and dose exists in the inventory. If the medicine is found, the quantity is increased
+by the input quantity, and the method returns true to indicate that the restocking was successful.
+If the medicine is not found, the method returns false to indicate that the restocking was not successful.
+Back in the restockMedicine() method, if the restock method returns true, the method prints a success message
+indicating that the medicine has been restocked successfully. If the restock method returns false,
+the method prints an error message indicating that the medicine was not found.
+Finally, the method ends by printing a line of dashes as a separator between this and the next input/output.
+
+-- DISPLAYALLMEDICINES METHOD
+The method uses a for loop to iterate through the medicines available and print out their information
+using the getMedicines() method from the pharmacy class. The System.out.println("List of all medicines:");
+statement is a print statement that will display the message "List of all medicines:" on the console.
+The System.out.println("======================"); statement is a print statement that will display a line of equal
+signs to separate the medicine list from the message. Inside the loop, pharmacy.getMedicines() is used to retrieve
+the medicine information and print it out. pharmacy.getNumberOfMedicines() is used to determine
+the number of medicines available in the pharmacy. Finally, the
+System.out.println("-----------------------------------------------"); statement is a print statement
+that will display a line of dashes to separate the medicine list from other messages.
+
+-- DISPLAYPHARMACYINFO METHOD
+The method starts by printing the name of the pharmacy by calling the getName method of the pharmacy object, 
+which is an instance of the Pharmacy class. Then, it prints the number of medicines in the pharmacy by calling 
+the getNumberOfMedicines method of the pharmacy object. Next, it prints the quantity of over-the-counter medicines 
+and prescription medicines available in the pharmacy by calling the getOverTheCounterQuantity and 
+getPrescriptionQuantity methods of the pharmacy object, respectively. Finally, the method prints a separator line 
+using a print statement.

@@ -1,0 +1,14 @@
+- This code defines a class named "OverTheCounter" which extends the "Medicine" class.
+- The "OverTheCounter" class contains two private fields: "minAge" of type integer and two constructors.
+- The first constructor is a default constructor that calls the default constructor of the "Medicine" class using the
+"super()" method and sets the value of "minAge" to 18.
+- The second constructor takes four arguments: "name", "composition", "dose", and "minAge".
+It calls the constructor of the "Medicine" class that takes three arguments using the "super()" method
+and sets the value of "minAge" to the value passed in as an argument.
+- The third constructor takes six arguments: "name", "composition", "dose", "quantity", "price", and "minAge".
+It calls the constructor of the "Medicine" class that takes five arguments using the "super()" method
+and sets the value of "minAge" to the value passed in as an argument.
+- The class also has a getter and setter method for "minAge".
+- Finally, the class overrides the "toString()" method of the "Medicine" class to return a string representation
+of the "OverTheCounter" object, including the "toString()" method of the "Medicine"
+class and the value of the "minAge" variable.
